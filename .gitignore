@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Contact details stay local — never upload (test data)
+src/data/contact.js

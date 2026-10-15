@@ -1,0 +1,26 @@
+import { contact } from '../data/contact'
+
+export function Footer() {
+    return (
+        <footer className="site-footer section-pad">
+            <div className="footer-brand">
+                <img
+                    className="footer-logo"
+                    src="/img/logo-mattas-kitchen.png"
+                    alt="Matta's Kitchen"
+                />
+                <p>Beautiful food, thoughtfully made.</p>
+            </div>
+            <div className="footer-links">
+                <a href="#menu">Menu</a>
+                <a href="#occasions">Occasions</a>
+                <a href="#about">About</a>
+                <a href={contact.instagram} target="_blank" rel="noopener">Instagram</a>
+            </div>
+            <div className="footer-bottom">
+                <span>© 2026 Matta's Kitchen</span>
+                <span>Made for moments worth sharing.</span>
+            </div>
+        </footer>
+    )
+}

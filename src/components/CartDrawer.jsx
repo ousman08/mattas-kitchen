@@ -137,23 +137,31 @@ export function CartDrawer({ open, onClose, lines, count, total, changeQuantity,
                     <div className="order-done">
                         <h3>Thank you!</h3>
                         <p className="order-done-note">
-                            Your order summary is ready. Send it by email or WhatsApp and we will confirm your booking.
+                            Your order is almost there. Follow these two steps to confirm it:
                         </p>
+                        <ol className="order-steps">
+                            <li>
+                                <strong>Send your order via WhatsApp</strong> — it arrives written down, ready for us to review.
+                            </li>
+                            <li>
+                                <strong>Call us to confirm</strong> — we'll check availability and dates with you. Your booking is only confirmed after the call.
+                            </li>
+                        </ol>
                         <div className="order-done-summary">{summary}</div>
                         <div className="order-done-actions">
                             <a
                                 className="primary-button"
-                                href={`mailto:${contact.email}?subject=${encodeURIComponent("Order — Matta's Kitchen")}&body=${encodeURIComponent(summary)}`}
-                            >
-                                Send by email <span>↗</span>
-                            </a>
-                            <a
-                                className="text-link-button"
                                 href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(summary)}`}
                                 target="_blank"
                                 rel="noopener"
                             >
-                                Send by WhatsApp <span>↗</span>
+                                1. Send by WhatsApp <span>↗</span>
+                            </a>
+                            <a
+                                className="text-link-button"
+                                href={`tel:${contact.phone}`}
+                            >
+                                2. Call to confirm <span>↗</span>
                             </a>
                         </div>
                         <p className="order-done-note">

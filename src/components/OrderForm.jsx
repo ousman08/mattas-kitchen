@@ -37,13 +37,13 @@ export function OrderForm({ lines, total, onBack, onConfirmed }) {
                 {errors.name && <p className="field-error">{errors.name}</p>}
             </div>
             <div className="field">
-                <label htmlFor="order-contact">Email or phone *</label>
+                <label htmlFor="order-contact">Phone *</label>
                 <input
                     id="order-contact"
-                    type="text"
+                    type="tel"
                     value={form.contact}
                     onChange={update('contact')}
-                    autoComplete="email"
+                    autoComplete="tel"
                 />
                 {errors.contact && <p className="field-error">{errors.contact}</p>}
             </div>
@@ -65,6 +65,10 @@ export function OrderForm({ lines, total, onBack, onConfirmed }) {
                     onChange={update('notes')}
                 />
             </div>
+            <p className="order-privacy-note">
+                We only use your details to process your order.{' '}
+                <a href="/politica-privacidad" target="_blank" rel="noopener">Privacy policy</a>
+            </p>
             <div className="order-summary-lines">
                 {lines.map(({ product, quantity }) => (
                     <div key={product.id}>
@@ -78,7 +82,7 @@ export function OrderForm({ lines, total, onBack, onConfirmed }) {
                 </div>
             </div>
             <button className="primary-button" type="submit">
-                Confirm order <span>↗</span>
+                Review order <span>↗</span>
             </button>
         </form>
     )

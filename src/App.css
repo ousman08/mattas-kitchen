@@ -1,4 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap');
+/* Fuentes auto-hospedadas (sin peticiones a Google Fonts, mejor para privacidad) */
+@font-face {
+    font-family: 'Allura';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/allura.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+    src: url('./fonts/cormorant-garamond.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url('./fonts/dm-sans.woff2') format('woff2')
+}
 
 :root {
     --cream: #f8f3ed;
@@ -228,7 +251,8 @@ h2 em {
 .gallery-item,
 .about-image {
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    border-radius: 35px;
 }
 
 .hero-image img,
@@ -514,14 +538,18 @@ h2 em {
     justify-content: center
 }
 
+
+
 .about-logo {
     display: block;
     width: min(72%, 340px);
-    height: auto;
-    padding: 2rem;
+    /* Forzamos a que el alto sea igual al ancho para mantener el círculo perfecto */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; /* Evita que la imagen del logo se deforme dentro del círculo */
+    padding: 2rem; /* Nota: si el fondo es blanco, el padding alejará el borde del logo */
     background: var(--paper);
-    border-radius: 8px;
-    box-shadow: 0 15px 40px rgba(75, 48, 40, .10)
+    border-radius: 50%; /* Esto hace que el contenedor sea redondo */
+    box-shadow: 0 15px 40px rgba(75, 48, 40, .10);
 }
 
 .about-copy {
@@ -772,9 +800,11 @@ h2 em {
 
 .footer-logo {
     display: block;
-    height: 64px;
-    width: auto;
-    margin-bottom: 1rem
+    height: 100px;
+    width: 100px; 
+    object-fit: cover; /*Evita que la imagen se deforme al forzar el tamaño cuadrado */
+    border-radius: 30%; /* Hace el logo sea sea completamente redondo*/
+    margin-bottom: 1rem;
 }
 
 .product-minimum {
@@ -1170,6 +1200,90 @@ h2 em {
     color: var(--soft);
     font-size: .72rem;
     line-height: 1.7
+}
+
+.order-steps {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-size: .78rem;
+    line-height: 1.6
+}
+
+.order-privacy-note {
+    margin: .2rem 0 0;
+    color: var(--soft);
+    font-size: .68rem;
+    line-height: 1.6
+}
+
+.order-privacy-note a {
+    text-decoration: underline;
+    text-underline-offset: 2px
+}
+
+/* ——— Páginas legales ——— */
+
+.legal-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 5rem
+}
+
+.legal-back {
+    display: inline-block;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-bottom: 2rem
+}
+
+.legal-back:hover {
+    opacity: .55
+}
+
+.legal-title {
+    font: 500 clamp(2rem, 4vw, 3rem)/1.05 'Cormorant Garamond', serif;
+    margin: 0 0 .4rem
+}
+
+.legal-updated {
+    margin: 0 0 2.5rem;
+    color: var(--soft);
+    font-size: .74rem
+}
+
+.legal-page section {
+    margin-bottom: 2rem
+}
+
+.legal-page h2 {
+    font: 500 1.35rem/1.2 'Cormorant Garamond', serif;
+    margin: 0 0 .6rem
+}
+
+.legal-page p,
+.legal-page li {
+    font-size: .85rem;
+    line-height: 1.75;
+    color: var(--brown)
+}
+
+.legal-page p {
+    margin: 0 0 .6rem
+}
+
+.legal-page ul {
+    margin: 0 0 .6rem;
+    padding-left: 1.2rem
+}
+
+.legal-page a {
+    text-decoration: underline;
+    text-underline-offset: 2px
 }
 
 /* ——— Accesibilidad ——— */

@@ -3,7 +3,7 @@
 // La lógica del pedido no cambia al actualizar estos valores.
 export const contact = {
     email: "oman7910@gmail.com", // DATO DE PRUEBA
-    whatsapp: "34632548507", // DATO DE PRUEBA (formato internacional, sin +)
-    phone: "+34632548507", // DATO DE PRUEBA (formato E.164 con +, para el botón de llamada)
+    whatsapp: "447598850435", // DATO DE PRUEBA (formato internacional, sin +)
+    phone: "+447598850435", // DATO DE PRUEBA (formato E.164 con +, para el botón de llamada)
     instagram: "https://www.instagram.com/mattas_kitchen/",
 }

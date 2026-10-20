@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { contact } from '../data/contact'
 
 // Política de privacidad (UK GDPR) — 1 página básica.
@@ -9,7 +9,7 @@ export function PrivacyPolicy() {
     return (
         <div className="site-shell">
             <main className="legal-page section-pad">
-                <Link className="legal-back" to="/">← Back to the shop</Link>
+                <Link className="legal-back" href="/">← Back to the shop</Link>
                 <h1 className="legal-title">Privacy policy</h1>
                 <p className="legal-updated">Last updated: October 2026</p>
 

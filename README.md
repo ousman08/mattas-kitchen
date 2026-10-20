@@ -1,25 +1,26 @@
 # Mattas Kitchen
 
-A React + Vite project for Mattas Kitchen.
+A Next.js (App Router) project for Mattas Kitchen.
 
 ## Project Structure
 
 ```
 mattas-kitchen/
+├── app/
+│   ├── layout.jsx              # Root layout (HTML shell, metadata, SpeedInsights)
+│   ├── globals.css             # Global styles (fonts, variables, components)
+│   ├── page.jsx                # Home route (/)
+│   └── politica-privacidad/
+│       └── page.jsx            # Privacy policy route (/politica-privacidad)
 ├── src/
-│   ├── components/      # React components
-│   ├── pages/          # Page components
-│   ├── data/           # Data and constants
-│   ├── assets/         # Images, fonts, etc.
-│   ├── App.jsx         # Main App component
-│   ├── main.jsx        # Entry point
-│   ├── index.css       # Global styles
-│   └── App.css         # App styles
+│   ├── components/             # React components (Home, Header, Hero, ...)
+│   ├── views/                  # Page-like components (PrivacyPolicy)
+│   ├── hooks/                  # useCart (localStorage cart)
+│   ├── data/                   # Products and contact data
+│   └── fonts/                  # Self-hosted fonts (woff2)
 ├── public/
-│   └── images/         # Static images
-├── package.json
-├── vite.config.js
-└── index.html
+│   └── img/                    # Static images
+└── package.json
 ```
 
 ## Getting Started
@@ -27,13 +28,13 @@ mattas-kitchen/
 ### Installation
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 The app will open at `http://localhost:3000`
@@ -41,11 +42,11 @@ The app will open at `http://localhost:3000`
 ### Build
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ## Technologies
 
-- **React 18** - UI library
-- **Vite** - Build tool and dev server
-- **React Router** - Client-side routing
+- **Next.js 16** - App Router, server and client components
+- **React 19** - UI library
+- **@vercel/speed-insights** - Analytics

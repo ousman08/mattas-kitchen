@@ -4,7 +4,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('./fonts/allura.woff2') format('woff2')
+    src: url('../src/fonts/allura.woff2') format('woff2')
 }
 
 @font-face {
@@ -12,7 +12,7 @@
     font-style: normal;
     font-weight: 400 500;
     font-display: swap;
-    src: url('./fonts/cormorant-garamond.woff2') format('woff2')
+    src: url('../src/fonts/cormorant-garamond.woff2') format('woff2')
 }
 
 @font-face {
@@ -20,7 +20,7 @@
     font-style: normal;
     font-weight: 400 600;
     font-display: swap;
-    src: url('./fonts/dm-sans.woff2') format('woff2')
+    src: url('../src/fonts/dm-sans.woff2') format('woff2')
 }
 
 :root {
@@ -1313,4 +1313,22 @@ textarea:focus-visible {
         align-items: center;
         width: 100%
     }
+}
+
+/* Estilos base (antes en src/index.css) */
+:root {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+    min-width: 320px;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
 }

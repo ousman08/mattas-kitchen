@@ -3,22 +3,31 @@ import { useEffect, useState } from 'react'
 const STORAGE_KEY = 'mattas-kitchen-cart'
 
 export function useCart(products) {
-    const [cart, setCart] = useState(() => {
-        try {
-            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY))
-            return saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : {}
-        } catch {
-            return {}
-        }
-    })
+    // SSR-safe: en el servidor (Next.js) no existe localStorage, así que el
+    // estado arranca vacío y se rellena en el cliente al montar el componente.
+    const [cart, setCart] = useState({})
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
+        try {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY))
+            if (saved && typeof saved === 'object' && !Array.isArray(saved)) {
+                setCart(saved)
+            }
+        } catch {
+            // localStorage no disponible o dato corrupto: carrito vacío
+        }
+        setLoaded(true)
+    }, [])
+
+    useEffect(() => {
+        if (!loaded) return
         try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(cart))
         } catch {
             // localStorage no disponible: el carrito funciona en memoria
         }
-    }, [cart])
+    }, [cart, loaded])
 
     const addToCart = (id) =>
         setCart((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }))

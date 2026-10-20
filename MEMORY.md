@@ -11,7 +11,7 @@
 - Logo verificado: `public/img/logo-mattas-kitchen.png`. Aprobado para header/About/footer/favicon. NO reemplazar ni modificar.
 - `Captura desde 2026-08-18 12-12-21.png` es COPIA del logo: NO usar como foto de producto.
 - Instagram oficial: https://www.instagram.com/mattas_kitchen/
-- Contacto (DATOS DE PRUEBA) en `src/data/contact.js`: oman7910@gmail.com · WhatsApp 34632548507.
+- Contacto (DATOS DE PRUEBA) en `src/data/contact.js`: oman7910@gmail.com.
 - Flujo de pedido: sin pasarela; cierra con resumen + email/WhatsApp.
 - Carrito: useState en App + hook `useCart` + localStorage. Verificado en Chrome real.
 - Web en inglés (datos del negocio en £). Usuario no lee inglés: traducción de UI pendiente de decisión.

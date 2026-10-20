@@ -1,3 +1,5 @@
+'use client'
+
 export function Header({ count, menuOpen, onOpenMenu, onOpenCart }) {
     return (
         <header className="site-header">

@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
 import { contact } from '../data/contact'
 import { OrderForm } from './OrderForm'

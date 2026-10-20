@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { contact } from '../data/contact'
 
 export function Footer() {
@@ -13,11 +13,11 @@ export function Footer() {
                 <p>Beautiful food, thoughtfully made.</p>
             </div>
             <div className="footer-links">
-                <Link to="/#menu">Menu</Link>
-                <Link to="/#occasions">Occasions</Link>
-                <Link to="/#about">About</Link>
+                <Link href="/#menu">Menu</Link>
+                <Link href="/#occasions">Occasions</Link>
+                <Link href="/#about">About</Link>
                 <a href={contact.instagram} target="_blank" rel="noopener">Instagram</a>
-                <Link to="/politica-privacidad">Privacy</Link>
+                <Link href="/politica-privacidad">Privacy</Link>
             </div>
             <div className="footer-bottom">
                 <span>© 2026 Matta's Kitchen</span>
